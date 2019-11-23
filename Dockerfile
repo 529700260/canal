@@ -2,6 +2,10 @@ FROM daocloud.io/library/java:8u40-b09
 MAINTAINER JiYun Tech Team <mboss0@163.com>
 
 ADD ./sources.list /etc/apt/sources.list
+
+RUN mkdir -p /var/www
+VOLUME /var/www
+WORKDIR /var/www
 ADD ./canal.tar   /var/www/
 RUN set -x && apt-get update && apt-get install -y --no-install-recommends  openssh-server tzdata  && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
 RUN mkdir /var/run/sshd && \
@@ -20,8 +24,6 @@ RUN chmod 755 /start.sh
 
 RUN echo "sshd:ALL" >> /etc/hosts.allow
 
-RUN mkdir -p /var/www
-VOLUME /var/www
-WORKDIR /var/www
+
 
 ENTRYPOINT ["/bin/bash", "/start.sh"]

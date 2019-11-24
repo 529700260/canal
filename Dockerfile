@@ -25,7 +25,7 @@ RUN mkdir -p /var/www
 RUN chmod 755 /var/www
 VOLUME /var/www
 WORKDIR /var/www
-RUN chmod -x /var/www/bin/stop.sh
-RUN chmod -x /var/www/bin/startup.sh
+RUN chmod 755 /var/www/bin/stop.sh
+RUN chmod 755 /var/www/bin/startup.sh
 
 ENTRYPOINT ["/bin/bash", "/start.sh"]

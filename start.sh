@@ -14,7 +14,7 @@ __start() {
   chmod +x $JAVA_OPTS/bin/startup.sh
   bash $JAVA_OPTS/bin/stop.sh
   bash $JAVA_OPTS/bin/startup.sh
-  echo "$RUN_NAME started success."
+  echo "$RUN_NAME start1ed success."
 }
 
 # Call all functions

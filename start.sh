@@ -11,7 +11,7 @@ __start() {
   JAVA_OPTS=/var/www/
   source /etc/profile
   bash $JAVA_OPTS/bin/stop.sh
-  bash $JAVA_OPTS/bin/start.sh
+  bash $JAVA_OPTS/bin/startup.sh
   echo "$RUN_NAME started success."
 }
 

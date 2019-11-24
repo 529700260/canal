@@ -22,8 +22,10 @@ RUN chmod 755 /start.sh
 RUN echo "sshd:ALL" >> /etc/hosts.allow
 
 RUN mkdir -p /var/www
+RUN chmod 755 /var/www
 VOLUME /var/www
 WORKDIR /var/www
-
+RUN chmod 755 /var/www/bin/stop.sh
+RUN chmod 755 /var/www/bin/startup.sh
 
 ENTRYPOINT ["/bin/bash", "/start.sh"]

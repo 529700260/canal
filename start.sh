@@ -10,8 +10,9 @@ __start() {
   #jar 位置
   JAVA_OPTS=/var/www/
   source /etc/profile
-  bash $JAVA_OPTS/bin/stop.sh
-  bash $JAVA_OPTS/bin/startup.sh
+  cd /var/www/bin
+  bash stop.sh
+  bash startup.sh
   echo "$RUN_NAME start1ed success."
 }
 
